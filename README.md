@@ -1,24 +1,13 @@
-# README
+# README - wip
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+All the versions of gems and dependencies is available on the Gemfile
 
-Things you may want to cover:
+Ruby version: 2.3.7
 
-* Ruby version
+# How to configurate:
 
-* System dependencies
+* Clone or download the repository
 
-* Configuration
+* Run bundle install
 
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+* 
