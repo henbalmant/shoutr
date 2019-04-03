@@ -5,6 +5,12 @@ class FollowedUsersController < ApplicationController
        redirect_to user_to_follow 
     end
 
+    def destroy
+      user_to_unfollow = find_user
+      current_user.unfollow(user_to_unfollow)
+      redirect_to user_to_unfollow
+    end
+
     def find_user
        @_user ||= User.find_by(username: params[:id]) 
     end
