@@ -1,6 +1,6 @@
-# README - wip
+# README - (WORK IN PROGRESS)
 
-All the versions of gems and dependencies is available on the Gemfile
+All the versions of gems and dependencies are available on the Gemfile
 
 Ruby version: 2.3.7
 
