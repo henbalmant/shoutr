@@ -7,10 +7,6 @@ class Dashboard
         Timeline.new(timeline_users)
     end
 
-    def summary
-        Summary.new(user)
-    end
-
     private
 
     attr_reader :user
