@@ -1,11 +1,25 @@
-<h1>Dashboard</h1>
+<div class="container main-content">
+  <div class="row">
+    <%= render @dashboard.summary %>
+    
+    <div class="col-6">
+      <div class="tweet-card pr-5 pl-5 mt-5">
+        <%= shout_form_for(TextShout) do |form| %>
+          <div class="form-group row">
+          <%= form.text_field :body, placeholder: "wail here!", required: true, class: "form-control col-8" %>
+          <%= form.submit("Wail!", class: "btn btn-primary col-4") %>
+          </div>
+        <% end %>
 
-<%= shout_form_for(TextShout) do |form| %>
-    <%= form.text_field :body, placehoder: "shout here!", required: true %>
-<% end %>
+        <%= shout_form_for(PhotoShout) do |form| %>
+          <div class="form-group row">
+          <%= form.file_field :image, required: true, class: "form-control-file col-8" %>
+          <%= form.submit("Wail!", class: "btn btn-primary col-4") %>
+          </div>
+        <% end %>
+      </div>
 
-<%= shout_form_for(PhotoShout) do |form| %>
-    <%= form.file_field :image, required: true %>
-<% end %>
-
-<%= render @dashboard.timeline %>
+    <%= render @dashboard.timeline %>
+    </div>
+  </div>
+</div>

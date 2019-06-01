@@ -1,35 +1,24 @@
-<div class="tweetEntry">
-  
-  <div class="tweetEntry-content">
-
-      <%= avatar(shout.user, "tweetEntry-avatar") %>
-
-      <strong class="tweetEntry-fullname">
-      <%= link_to shout.username, shout.user %>
-      </strong>
-      
-      <span class="tweetEntry-username">
-        @<b><%= shout.username %></b>
+<li class="tweet-card">
+  <div class="tweet-content">
+    <div class="tweet-header">
+      <span class="fullname">
+        <strong><%= shout.username %></strong>
       </span>
-      
-      <span class="tweetEntry-timestamp">-
+      <span class="username">@<%= link_to shout.username, shout.user %></span>
+      <span class="tweet-time">- 
         <%= link_to shout do %>
-            <%= time_ago_in_words(shout.created_at) %> ago
+          <%= time_ago_in_words(shout.created_at) %> ago
         <% end %>
-    </span>
-      
+      </span>
+    </div>
+    <a>
+      <%= avatar shout.user, "tweet-card-avatar" %>
     </a>
-    
-    <div class="tweetEntry-text-container">
+    <div class="tweet-text">
       <%= render shout.content %>
     </div>
-    
+    <div class="tweet-footer">
+      <%= like_button(shout) %>
+    </div>
   </div>
-  
-  <div class="tweetEntry-action-list" style="line-height:24px;color: #b1bbc3;">
-    <i class="fa fa-reply" style="width: 80px;"></i>
-    <i class="fa fa-retweet" style="width: 80px"></i>
-    <i class="fa fa-heart" style="width: 80px"></i>
-  </div>
-  
-</div>
+</li>
