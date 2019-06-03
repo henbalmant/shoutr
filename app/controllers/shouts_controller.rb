@@ -10,7 +10,11 @@ class ShoutsController < ApplicationController
 
     def destroy
         shout = Shout.find(params[:id])
-        likes(shout).destroy
+        if likes(shout) == nil
+            true
+        else
+            likes(shout).destroy
+        end
         shout.destroy
         redirect_to root_path
     end
