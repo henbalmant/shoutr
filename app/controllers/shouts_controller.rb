@@ -10,9 +10,7 @@ class ShoutsController < ApplicationController
 
     def destroy
         shout = Shout.find(params[:id])
-        if likes(shout) == nil
-            true
-        else
+        if likes(shout) != nil
             likes(shout).destroy
         end
         shout.destroy
